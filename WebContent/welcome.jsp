@@ -9,9 +9,15 @@
 </head>
 <body>
 welcome 
+<c:forEach var="list" items="${listar }">
+	<ul>
+		<h1>Hello <li>${list.username }</li></h1>
+	</ul>
+</c:forEach>
 
-<table>
-  
-</table>
+
+<a href="ListChannelsController">Go to Channels</a>
+
+
 </body>
 </html>

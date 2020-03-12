@@ -1,13 +1,40 @@
 /* Made with love by Mutiullah Samim*/
 
-@import url('https://fonts.googleapis.com/css?family=Numans');
-
+@import url('https://fonts.googleapis.com/css?family=Nu@font-face { font-family: GeosansLight; src: url('GeosansLight.ttf');  }mans');
+/* @font-face { font-family: GeosansLight; src: url('GeosansLight.ttf');  } */
 html,body{
-background-image: url('../images/2.png');
+	
+/* background-image: url('https://cdn.pixabay.com/photo/2015/10/12/14/59/milky-way-984050__340.jpg'); */
+background-color:white;
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
 font-family: 'Numans', sans-serif;
+}
+#bg {
+   position: fixed; 
+  top: 0; 
+  left: 0; 
+	
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+
+  
+}
+#bg :hover {
+ 
+  
+}
+#bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: auto;
+  min-height: 55%;
 }
 
 .container{
@@ -16,17 +43,26 @@ align-content: center;
 }
 
 .card{
-height: 370px;
+font-family: 'Indie Flower', cursive;
+ font-size: 2.6em;
+ font-weight: bold;
+height: 320px;
 margin-top: auto;
 margin-bottom: auto;
-width: 400px;
+width: 300px;
 background-color: rgba(0,0,0,0.5) !important;
+
+  
+}
+
+.card :hover{
+
 }
 
 .social_icon span{
 font-size: 60px;
 margin-left: 10px;
-color: #FFC312;
+color: #007bff;
 }
 
 .social_icon span:hover{
@@ -46,7 +82,7 @@ top: -45px;
 
 .input-group-prepend span{
 width: 50px;
-background-color: #FFC312;
+background-color: #007bff;
 color: black;
 border:0 !important;
 }
@@ -70,8 +106,8 @@ margin-right: 5px;
 }
 
 .login_btn{
-color: black;
-background-color: #FFC312;
+color: white;
+background-color: #007bff;
 width: 100px;
 }
 

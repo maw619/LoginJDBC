@@ -3,7 +3,7 @@
 
 	
 	
-	<jsp:include page="/resources/pages/include/loginForm.jsp" />
+	<jsp:include page="/resources/pages/include/form.jsp" />
 	
 	
 	<jsp:include page="/resources/pages/include/footer.jsp" />
