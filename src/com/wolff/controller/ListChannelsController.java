@@ -35,9 +35,12 @@ public class ListChannelsController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("in ListChannelsController");
 		LoginDao d = new LoginDao();
-		List<Site>list = d.listAllChannels();
+		
+		List<Site>listSites = d.listAllChannels();
+		
 		HttpSession sesh = request.getSession();
-		sesh.setAttribute("list", list);
+		sesh.setAttribute("list", listSites);
+		
 		RequestDispatcher dis = request.getRequestDispatcher("channels.jsp");
 		dis.forward(request, response);
 	}

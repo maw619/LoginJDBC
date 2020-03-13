@@ -24,10 +24,10 @@
 					</div>
 					
 					<div class="form-group">
-<!-- 						<input type="submit" class="btn btn-primary" role="button" style="padding:10px;" value="Login"></input> -->
-<!-- 						<input type="submit" class="btn btn-warning" role="button" style="padding:10px;" value="register"></input> -->
 							<input type="submit" class="btn btn-primary" onclick="form.action='LoginController';" style="padding:10px;" value="Login">
+							<input type="submit" class="btn btn-primary" onclick="form.action='ListChannelsController';" style="padding:10px;" value="Channels">
 							<input type="submit" class="btn btn-warning" onclick="form.action='RegisterController';" style="padding:10px;" value="Register">
+							<input type="submit" class="btn btn-warning" onclick="form.action='AddSiteController';" style="padding:10px;" value="Add Site">
 					</div>
 				</form>
 			</div>

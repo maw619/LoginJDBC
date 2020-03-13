@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.wolff.dao.LoginDao;
+import com.wolff.model.Site;
 import com.wolff.model.User;
 
 /**
@@ -38,15 +39,26 @@ public class LoginController extends HttpServlet {
 	
 		User u = new User(username,password);
 		LoginDao d = new LoginDao();
+		
+		
+		List<Site>listSites = d.listAllChannels();
+		HttpSession sesh = request.getSession();
+		sesh.setAttribute("list", listSites);
+		
+		
+		
 		String path = "";
 		List<User>listar = d.login(u);
 		if(listar != null){
-			HttpSession sesh = request.getSession();
-			sesh.setAttribute("listar", listar);
+			HttpSession sesh2 = request.getSession();
+			sesh2.setAttribute("listar", listar);
 			path = "welcome.jsp";
 		}else {
 			path = "index.jsp";
 		}
+		
+		
+		
 		RequestDispatcher dis = request.getRequestDispatcher(path);
 		dis.forward(request, response);
 	}

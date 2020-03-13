@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.wolff.dao.LoginDao;
+import com.wolff.model.Site;
 import com.wolff.model.User;
 
 /**
@@ -35,8 +36,13 @@ public class ListController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		LoginDao d = new LoginDao();
 		List<User>list = d.listAll();
+		List<Site>listSites = d.listAllChannels();
 		HttpSession sesh = request.getSession();
-		sesh.setAttribute("list", list);
+		sesh.setAttribute("list", listSites);
+		
+		HttpSession sesh2 = request.getSession();
+		sesh2.setAttribute("list", list);
+		
 		RequestDispatcher dis = request.getRequestDispatcher("channels.jpg");
 		dis.forward(request, response);
 	}

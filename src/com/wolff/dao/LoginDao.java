@@ -32,7 +32,7 @@ public class LoginDao extends Conexion{
 		}
 		return listar;
 	}
-	
+
 	public String Register(User u) {
 		String check = "";
 		this.getConn();
@@ -75,7 +75,7 @@ public class LoginDao extends Conexion{
 		}
 		return listar;
 	}
-	
+
 	public List<User>listAll(){
 		this.getConn();
 		List<User> listar = null;
@@ -93,6 +93,7 @@ public class LoginDao extends Conexion{
 		}
 		return listar;
 	}
+	
 	public List<Site>listAllChannels(){
 		this.getConn();
 		List<Site> listar = null;
@@ -111,11 +112,21 @@ public class LoginDao extends Conexion{
 		return listar;
 	}
 	
-	
-	
-	
-	
-	
-	
+	public boolean addSite(Site s){
+		this.getConn();
+		boolean check = false;
+		String sql = "insert into site (url,channel,genre) values  (?,?,?)";
+		try {
+			PreparedStatement ps = this.conn.prepareStatement(sql);
+			ps.setString(1, s.getUrl());
+			ps.setString(2, s.getChannel());
+			ps.setString(3, s.getGenre());
+			ps.executeUpdate();
+			check = true;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return check;
+	}
 	
 }

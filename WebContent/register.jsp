@@ -1,4 +1,4 @@
-<jsp:include page="/resources/pages/include/header.jsp" />
+<jsp:include page="/resources/pages/include/header2.jsp" />
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
@@ -33,5 +33,3 @@
 
 
 
-
-<jsp:include page="/resources/pages/include/footer.jsp" />
